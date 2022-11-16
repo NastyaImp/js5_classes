@@ -82,20 +82,20 @@ class Library {
     }
 
     findBookBy(type, value) {
-        for (let key in library.books) {
-            for (let i in library.books[key])
-            if (i == type && library.books[key][i] == value) {
-                return library.books[key];
+        for (let key in this.books) {
+            for (let i in this.books[key])
+            if (i == type && this.books[key][i] == value) {
+                return this.books[key];
             } 
         }
         return null;
     }
 
     giveBookByName(bookName) {
-        const index = library.books.findIndex(n => n.name === bookName);
-        let deleteBooks = library.books[index];
+        const index = this.books.findIndex(n => n.name === bookName);
+        let deleteBooks = this.books[index];
         if (index !== -1) {
-            library.books.splice(index, 1);
+            this.books.splice(index, 1);
             return deleteBooks;
         }
 
